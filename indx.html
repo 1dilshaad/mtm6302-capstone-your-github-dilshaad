@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h4>THE EARTH</h4>
+      
+        <div id="selectedDateDisplay"></div>
+        <div id="imageContainer">
+            <img id="image" src="/images/Jupiter.jpg" alt="Selected Image">
+            <p id="planetDescription">Planet Earth, our celestial home nestled in the vastness of space, is a mesmerizing tapestry of life, diversity, and natural wonders. From its swirling oceans to towering mountains, Earth is a testament to the intricate interplay of geological forces, biological evolution, and the delicate balance of ecosystems.</p>
+        </div>
+    </div>
+<script>
+     // Check if the selected date matches a specific date
+     if (year === '2024' && month === '03' && day === '02') {
+        // Change the image and description for this specific date
+        document.getElementById('image').src = '/images/Jupiter.jpg'; // Change to the path of your desired image
+        document.getElementById('planetDescription').textContent = "Description for the selected date."; // Change to the description for the selected date
+    } else {
+        // Change the image and description back to default for other dates
+        document.getElementById('image').src = '/images/Jupiter.jpg'; // Default image path
+        document.getElementById('planetDescription').textContent = "Planet Earth, our celestial home nestled in the vastness of space, is a mesmerizing tapestry of life, diversity, and natural wonders. From its swirling oceans to towering mountains, Earth is a testament to the intricate interplay of geological forces, biological evolution, and the delicate balance of ecosystems."; // Default description
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get('date');
+
+        // Check if the selected date matches 2nd March 2024
+        if (selectedDate === '2024-03-02') {
+            // Change the image and description for this specific date
+            document.getElementById('image').src = '/images/Jupiter.jpg'; // Change to the path of your desired image
+            document.getElementById('planetDescription').textContent = "Description for the selected date."; // Change to the description for the selected date
+        }
+    }
+
+</script>
+</body>
+</html>

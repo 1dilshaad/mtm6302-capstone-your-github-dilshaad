@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>saved as</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+        body {
+            background-color: rgb(9, 9, 63); 
+            color: white; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        img {
+            max-width: 100%; 
+            height: auto;
+            max-height: 300px;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        .column {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .rectangle {
+            background-color: white;
+            height: 50px;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; 
+            overflow-y: auto; 
+            max-height: 100px; 
+        }
+
+        p {
+            margin-top: 20px;
+        }
+
+       
+        .calendar {
+            display: inline-block;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .calendar th,
+        .calendar td {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .calendar th {
+            background-color: white;
+            color: rgb(9, 9, 63);
+        }
+
+        .calendar td {
+            background-color: rgb(9, 9, 63);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>Date 17th feb 2024</h3>
+        <img src="images/dark-realm-planets-4k-px.jpg" alt="Your Image">
+        <p>Congratulations to the PACE team on a 
+        successful launch. With this new addition to 
+        NASA’s fleet of Earth-observing satellites, PACE 
+        will help us learn, like never before, how particles 
+        in our atmosphere and our oceans can identify 
+        key factors impacting global warming,” said 
+        NASA Administrator Bill Nelson.</p>
+        <div class="columns">
+            <div class="column">
+                <label for="selectedDate">Enter a non-future date (YYYY-MM-DD):</label><br>
+                <input type="date" id="selectedDate" name="selectedDate" min="1000-01-01" max="2999-12-31" required><br>
+                <button onclick="browseAPI()">ENTER</button>
+            </div>
+        </div>
+   </div>
+  
+
+   <script>
+       function browseAPI() {
+    const selectedDate = document.getElementById('selectedDate').value;
+    window.location.href = `browse_api.html?date=${selectedDate}`;
+}
+   </script>
+</body>
+</html>
