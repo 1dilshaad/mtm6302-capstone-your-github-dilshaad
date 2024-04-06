@@ -11,35 +11,28 @@
         <h3>THE EARTH</h3>
         <div id="selectedDateDisplay"></div>
         <div id="imageContainer">
-            <img id="image" src="/images/Earth1.jpg" alt="Selected Image">
+            <img id="image" src="images/Earth1.jpg" alt="Selected Image">
             <p id="planetDescription">Planet Earth, our celestial home nestled in the vastness of space, is a mesmerizing tapestry of life, diversity, and natural wonders. From its swirling oceans to towering mountains, Earth is a testament to the intricate interplay of geological forces, biological evolution, and the delicate balance of ecosystems.</p>
         </div>
     </div>
-   
     
     <script>
     function browseAPI() {
         const selectedDate = document.getElementById('selectedDate').value;
-             const dateParts = selectedDate.split('-');
-        const year = dateParts[2024];
-        const month = dateParts[3];
-        const day = dateParts[1];
+        const dateParts = selectedDate.split('-');
+        const year = dateParts[0];
+        const month = dateParts[1];
+        const day = dateParts[2];
+        
         if (year === '2024' && month === '03' && day === '02') {
-                  } else {
-                  document.getElementById('image').src = '/images/Earth1.jpg';
+            // Handle special case
+        } else {
+            document.getElementById('image').src = 'images/Earth1.jpg';
         }
-             const pageURL = `page_${year}_${month}_${day}.html`;
-               window.open(pageURL, '_blank');
+        
+        const pageURL = `page_${year}_${month}_${day}.html`;
+        window.open(pageURL, '_blank');
     }
-    function browseAPI() {
-    const selectedDate = document.getElementById('selectedDate').value;
-    const dateParts = selectedDate.split('-');
-    const year = dateParts[0];
-    const month = dateParts[1];
-    const day = dateParts[2];
-    }
-   
-
     </script>
 </body>
 </html>
